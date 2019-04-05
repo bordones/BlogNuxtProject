@@ -120,6 +120,8 @@ const createStore = () => {
           console.log("token invalid or expired");
           vuexContext.dispatch("logout");
         }
+
+       vuexContext.commit("setToken", token);
       },
       logout(vuexContext) {
         vuexContext.commit("clearToken");
